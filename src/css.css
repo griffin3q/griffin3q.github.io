@@ -1,0 +1,151 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+a, a:visited, a:link{
+    text-decoration: none;
+    color: #d3d3d3;
+}
+
+body {
+    background-color: #121212;
+    margin:0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-family: 'Exo 2', sans-serif;
+}
+canvas{
+    z-index: -1;
+    position:fixed;
+}
+
+#container{
+    position: relative;
+    outline: 2px solid  #b19cd9;
+    border-radius: 5px;
+    background-color: #121212;
+    margin-top: 50px;
+    width: 800px;
+    display: flex;
+    box-shadow: 0px 0px 5px 2px #d3d3d3;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+}
+
+@keyframes spin {
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
+}
+hr{
+    margin:0 25px;
+    color: #d3d3d3;
+    opacity: .1;
+}
+#pfp-pix{
+    outline: 2px solid #b19bc9;
+    box-shadow: 0px 0px 5px 2px #d3d3d3;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.viol{
+    color: #CF9FFF;
+}
+
+#skills-top h4{
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+
+#skills{
+    padding: 20px;
+}
+
+#skills-content{
+    text-align: center;
+    padding: 10px;
+    font-size: 32px;
+}
+
+
+#skills-content a{
+    padding-right: 20px;
+    text-align: center;
+}
+
+#skills-content a:hover{
+    color: #b19bc9;
+}
+
+#projects{
+    padding: 20px;
+}
+
+#projects-top h4{
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+#projects-content p{
+    text-align: center;
+    opacity: 0.4;
+}
+
+#projects-content{
+    padding: 20px;
+}
+
+
+#name-box h2{
+    padding: 10px;
+}
+
+#name-box p{
+    text-align: justify;
+    word-wrap: initial
+}
+
+#footer{
+    width: 100%;
+    padding:10px 5px 5px 5px;
+}
+
+#copy{
+    font-weight: 100;
+    text-align: center;
+}
+
+#socials{
+    text-align: center;
+    padding: 10px;
+}
+
+.social-b{
+    color: #d3d3d3;
+    font-size: 20px;
+}
+
+.social-b:hover{
+    color: #CF9FFF;
+}
+
+#head-s i{
+    font-size: 28px;
+}
