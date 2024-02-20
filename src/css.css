@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/*Animations*/
+@keyframes spin{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+    
+}
+
+@keyframes shake{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(-10deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+    
+}
+
+
+/*
+Colors 
+
+#000000
+#313131
+#010100
+#777777
+#141414
+
+*/
+
+body{
+    background-color: #141414;
+    color: #e3e3e3;
+    font-family: "Kode Mono", monospace;
+}
+
+#container{
+    display: flex;
+    width: 1000px;
+    margin: 20px auto;
+    flex-direction: column;
+}
+
+#header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #303030;
+    padding: 30px;
+    gap: 30px;
+}
+
+#head-title{
+    font-size: 1.5rem;
+}
+
+hr
+{
+    width: 80%;
+    margin: 5px auto;
+}
+
+#head-title h4{
+    opacity: .5;
+    font-size: 1.2rem;
+}
+
+#head-title p{
+    font-size: 1rem;
+}
+
+#profile-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation-name: shake;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#nav{
+    padding-left: 40px;
+    width: 100%;
+    background-color: #505050;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+}
+
+.button{
+    padding: 10px
+}
+
+.button:hover{
+    background-color: #606060;
+}
+
+#content-box{
+    display: flex;
+    flex-direction: row;
+}
+
+#content{
+    width: 75%;
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#skills-list img{
+    height: 40px;
+    width: 40px;
+}
+
+#stuff img{
+   height: 40px;
+   width: 40px;
+}
+
+#stuff{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#apps{
+    display: flex;
+    gap: 30px;
+    padding: 5px;
+}
+
+.items{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column
+}
+
+#skills-list{
+    padding:20px 10px 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.theme-box h2{
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.theme-box p{
+    opacity: .6;
+    text-align: justify;
+}
+
+.theme-box li{
+    opacity: .8;
+    text-align: center;
+    margin: 5px auto;
+    list-style-position: inside;
+
+}
+
+#projects p{
+    text-align: center;
+}
+
+.theme-box{
+    width: 90%;
+}
+
+#side-box{
+    width: 25%;
+}
+
+#audio-box{
+    width: 100%;
+    height: 30%;
+    background-color: #303030;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#stuff-box{
+    height: 70%;
+    background-color: #303030;
+}
+
+#audio-box p{
+    text-align: center;
+}
+
+#audio-img{
+    width: 100px;
+    height: 100px;
+    animation-name: spin;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    padding: 10px;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#link-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.links img{
+    height: 30px;
+    width: 30px;
+}
+
+.links img:hover{
+    padding: 2px;
+}
+#contact-pix{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+#footer{
+    background-color: #303030;
+    padding: 15px;
+    text-align: center;
+}
