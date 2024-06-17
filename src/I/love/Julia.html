@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um.. Hiyaa!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    color: #fff;
+    transition: .4s;
+}
+
+body,html{
+    width: 100svw;
+    height: 100svh;
+    background: rgb(146,77,191);
+    background: linear-gradient(90deg, rgba(146,77,191,1) 0%, rgba(158,114,195,1) 32%, rgba(176,143,192,1) 64%, rgba(203,170,216,1) 100%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+main{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#text{
+    width: 70%;
+}
+
+.btn-box{
+    width: 30%;
+}
+
+button{
+    padding: 10px;
+    border-radius: 8px;
+    background: none;
+    outline: 2px solid #eee;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+button:hover{
+    background-color: #ac97d1;
+}
+
+h1{
+    font-size: 3.2rem;
+}
+
+#text p{
+    font-size: 18px;
+}
+
+p{
+    width: 400px;
+    text-align: justify;
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+span{
+    color: rgb(146,77,191)
+}
+
+    </style>
+</head>
+<body>
+    <main id="main">
+        <div id="text">
+            <h1>U<span>m</span>.. Hi<span>y</span>a!</h1>
+            <p>I bring you a letter from an idiot.</p>
+        </div>
+        <div class="btn">
+            <button id="read" class="button-4">Read more.</button>
+        </div>
+    </main>
+</body>
+<script>
+    var app = document.getElementById("main")
+    var read =document.getElementById("read");
+    read.addEventListener("click", (event) => {
+        app.style.flexDirection = "column"
+        app.innerHTML = '<img src="4.gif" alt="pix">\
+       <h1><span>H</span>ey, Ju<span>ll</span>y!</h1>\
+       <p>Zainspirowałaś mnie do zrobienia tej malusiej stronki, nie miałem poświęcić dziś na to zbyt wiele czasu ale pewien <span style="text-transform: uppercase;">Gremlin</span> powiedział mi kiedyś że liczy sie <span>"Gest"</span> Haha więc na chwile obecją będziesz musiała się tym zadowolić na jakiś czas.</p>\
+       <button id="next">Next!</button>'
+       var next =document.getElementById("next");
+        next.addEventListener("click", (event) => {
+            app.style.flexDirection = "column"
+            app.innerHTML = '<img src="5.gif" alt="pix">\
+            <p style="padding: 20px; font-size: 1.5rem; width: 90%;">Chcę żebyś wiedziała że naprawdę mi na <span>tobie</span> zależy, i wiele dla mnie znaczy to co robisz jak i to że wogóle <span>jesteś</span> i męczysz się każdego dnia z kimś mojego pokroju! <span>Love u</span> so freaking much for this all.</p>\
+        <button id="nextt">Next!</button>'
+        var nextt =document.getElementById("nextt");
+        nextt.addEventListener("click", (event) => {
+            app.style.flexDirection = "column"
+            app.innerHTML = '<img src="10.gif" alt="pix">\
+            <p style="padding: 20px; font-size: 1.5rem; width: 90%;">Nie chcę <span>cię</span> stracić i no <span>martwie</span> się o twoje zdrówko więc nawet tutaj znajdę chwile by powiedzieć ci być pamiętała <span>jeść</span> i <span>pić</span> jak normalny człek</p><h1>Love <span>You!</span></h1>'
+        });
+        });
+    });
+    
+</script>
+</html>
