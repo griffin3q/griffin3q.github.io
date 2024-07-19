@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: .5s;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/*Animations*/
+@keyframes spin{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+    
+}
+
+@keyframes shake{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    50%{
+        transform: rotateZ(-10deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+    
+}
+
+#header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #303030;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    filter: none;
+}
+
+#header img{
+    filter: none;
+}
+
+/*
+Colors 
+
+#000000
+#313131
+#010100
+#777777
+#141414
+
+*/
+
+body{
+    width: 100%;
+    background-color: #141414;
+    color: #e3e3e3;
+    font-family: "Kode Mono", monospace;
+}
+
+#container{
+    display: flex;
+    width: 1000px;
+    margin: 20px auto;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h1,span{
+    filter: none;
+}
+
+
+.box{
+    filter: grayscale();
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box img{
+    width: 100%;
+}
+
+.box:hover{
+    filter: none;
+}
+
+.box h2, .box p{
+    background-color: #404040;
+    padding: 5px;
+}
+
+#content-box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
