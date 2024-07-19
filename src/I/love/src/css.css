@@ -72,6 +72,10 @@ body{
 
 }
 
+#header img{
+    height: 5%;
+}
+
 #head-title{
     font-size: 2rem;
 }
