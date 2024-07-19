@@ -1,2 +1,2 @@
 var audio = document.getElementById("bgMusic");
-audio.volume = 0.01;
+audio.volume = 1;
