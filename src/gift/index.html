@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="cnv"></canvas>
+    <div class="container" id="box">
+        <div class="valentines">
+         <div class="envelope"></div>
+          <div class="front"></div>
+        <div class="card">
+         <div class="text">Happy</br>Valentine's Day!</div>
+         <div class="texts">My Dear Jully!</div>
+         <div class="heart"</div>
+        </div>
+       
+        <div class="hearts">
+         <div class="one"></div>
+         <div class="two"></div>
+         <div class="three"></div>
+         <div class="four"></div>
+         <div class="five"></div>
+         </div>
+        </div>
+    </div>
+    
+      <div class="shadow"></div>
+      </div>
+     </div>
+    <body/>
+    <script>
+        const box = document.getElementById("box")
+
+        box.addEventListener("click", function go(){
+            window.open('http://griffin3q.github.io/src/Kocham/Cie/Cutie.html');
+        })
+        //Get context and screen size;
+var ctx = cnv.getContext("2d");
+var W = window.innerWidth;
+var H = window.innerHeight;
+
+//Set Canvas and Background Color;
+cnv.width = W;
+cnv.height = H;
+ctx.fillStyle = "#121212";
+ctx.fillRect(0, 0, W, H);
+
+//Glow effect;
+ctx.shadowBlur = 20;
+ctx.shadowColor = "#e3e3e3";
+
+function animate() {
+  //Random position and size of stars;
+  let x = W * Math.random();
+  let y = H * Math.random();
+  let r = 2.5 * Math.random();
+
+  //Draw the stars;
+  ctx.beginPath();
+  ctx.fillStyle = "white";
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fill();
+
+  setTimeout(animate, 200);
+}
+animate();
+    </script>
+       
+</body>
+</html>
