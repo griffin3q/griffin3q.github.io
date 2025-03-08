@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For my Dear Jully.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffccd5, #ffe6f0);
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .mail-wrapper {
+            position: relative;
+            width: 220px;
+            height: 160px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2;
+            animation: tiltBounce 2s infinite ease-in-out;
+            transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .mail-wrapper:hover {
+            animation: none; /* Stop tilting on hover */
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
+        .mail-wrapper.hide {
+            opacity: 0;
+        }
+        @keyframes tiltBounce {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            50% { transform: rotate(10deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .mail-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            transform: rotate(180deg);
+            width: 210px;
+            height: 60px;
+            background: #e74c3c;
+            clip-path: polygon(50% 0, 100% 100%, 0 100%);
+        }
+        .heart {
+            font-size: 50px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .mail-wrapper:hover .heart {
+            transform: scale(1.2);
+        }
+        .letter {
+            position: absolute;
+            padding: 8px;
+             bottom: -160px;
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(0);
+            transition: transform 0.8s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+            z-index: 1; /* Appear behind the mail wrapper */
+        }
+        .letter.show {
+            position: absolute;
+            top:400px;
+            transform: translateY(-180px); /* Move up from behind the mail */
+            opacity: 1;
+            z-index: 3; /* Bring above the mail wrapper */
+        }
+        .letter h2 {
+            font-family: 'Brush Script MT', cursive;
+            color: #e74c3c;
+            font-size: 24px;
+        }
+        .letter p {
+            font-size: 14px;
+            color: #444;
+            text-align: center;
+            padding: 5px;
+        }
+        .letter .small-hearts {
+            display: flex;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .letter .small-hearts span {
+            font-size: 20px;
+        }
+        .heart-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .heart-rain span {
+            position: absolute;
+            bottom: 100%;
+            font-size: 24px;
+            opacity: 0.9;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mail-wrapper" id="mailWrapper" onclick="openLetter()">
+        <div class="heart">💌</div>
+    </div>
+
+    <div class="letter" id="letter">
+        <h2>Happy women's day Jully!</h2>
+        <p>"You're the reason hearts keep falling all around! 💕"</p>
+        <div class="small-hearts">
+            <span>❤️</span><span>💖</span><span>💘</span>
+        </div>
+    </div>
+
+    <div class="heart-rain" id="heartRain"></div>
+
+    <script>
+        const heartEmojis = ['❤️', '💙', '💜', '💛', '💚', '🧡', '🤎', '🖤', '🤍', '💖', '💘', '💝'];
+
+        function openLetter() {
+            document.getElementById("letter").classList.add("show");
+            document.getElementById("mailWrapper").classList.add("hide");
+            startContinuousHeartRain();
+        }
+
+        function startContinuousHeartRain() {
+            setInterval(() => {
+                createHeart();
+            }, 200); // Hearts keep falling every 200ms
+        }
+
+        function createHeart() {
+            const heartContainer = document.getElementById("heartRain");
+            const heart = document.createElement("span");
+            heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s"; // Random fall speed
+            heartContainer.appendChild(heart);
+
+            // Remove heart after it falls
+            setTimeout(() => heart.remove(), 5000);
+        }
+    </script>
+
+</body>
+</html>
