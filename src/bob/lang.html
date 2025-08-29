@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workplace.</title>
+
+    <link rel="stylesheet" href="css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+
+        html,body{
+            background-color: #eee;
+        }
+
+        main{
+            padding: 7%;
+        }
+
+        .title{
+            font-size: 2rem;
+        }
+
+        .links{
+            padding: 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        a {
+        color: #18272F;
+        position: relative;
+        text-decoration: none;
+        }
+
+        a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #18272F;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+        }
+
+        a:hover::before {
+        transform-origin: left;
+        transform: scaleX(.65);
+        }
+
+        .links a{
+            font-size: 1.2rem;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <main class="wrapper">
+        <div class="block">
+            <div class="title">Angielski</div>
+            <div class="links">
+                <a href="https://www.bbc.co.uk/learningenglish/">BBC Learning English</a>
+                
+            </div>
+        </div>
+        <div class="block">
+            <div class="title">Niemiecki</div>
+            <div class="links">
+                <a href="https://learngerman.dw.com/en/learn-german/s-9528">Deutsche Welle Learn German</a>
+                <a href="https://deutsch.info/?hl=en">deutsch.info</a>
+                <a href="https://www.learngermanonline.org/">Learn German Online</a>
+                <a href="https://www.thegermanproject.com/german-lessons">The German Project</a>
+            </div>
+        </div>
+        <div class="block">
+            <div class="title">Japoński</div>
+            <div class="links">
+                <a href="https://minato-jf.jp/">JF Japanese e-Learning Minato</a>
+                <a href="https://www3.nhk.or.jp/nhkworld/lesson/en/">NHK World Japan Easy Japanese</a>
+                <a href="https://www.kanshudo.com/">Kanshudo</a>
+                <a href="https://nihongo-e-na.com/">NIHONGO eな</a>
+            </div>
+        </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
