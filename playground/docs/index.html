@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#00243D">
+<title>Port Games – zawody pracownicze</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/PressStart2P-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/PixelifySans.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/fonts/VT323-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="crt">
+<header class="top">
+  <div class="bar">
+    <a class="logo" href="#/gry"><img src="assets/img/favicon.png" alt=""><span>PORT<br>GAMES</span></a>
+    <div class="who" id="who"></div>
+  </div>
+  <nav class="tabs" id="tabs">
+    <a href="#/gry" data-r="gry">Gry</a>
+    <a href="#/ranking" data-r="ranking">Ranking</a>
+    <a href="#/profil" data-r="profil">Profil</a>
+    <a href="#/regulamin" data-r="regulamin">Zasady</a>
+    <a href="#/ustawienia" data-r="ustawienia">Opcje</a>
+  </nav>
+</header>
+<div class="evbar" id="evbar" hidden></div>
+<main class="wrap" id="view"><p>Ładowanie…</p></main>
+<footer>
+  Nieoficjalne wydarzenie integracyjne pracowników. Strona nie jest oficjalnym serwisem ani produktem A.P. Moller – Maersk.<br>
+  Grafika pikselowa i gry wykonane przez zespół na potrzeby zabawy. Czcionki: Pixelify Sans, Press Start 2P, VT323 (SIL OFL).
+</footer>
+<div id="crt"></div>
+<script src="js/config.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

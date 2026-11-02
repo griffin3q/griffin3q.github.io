@@ -1,0 +1,122 @@
+/* Port Games – motyw inspirowany barwami portowymi. Nieoficjalne. */
+[hidden] { display: none !important; }
+@font-face { font-family: 'PS2P'; src: url('../assets/fonts/PressStart2P-Regular.ttf') format('truetype'); font-display: block; }
+@font-face { font-family: 'Pixelify'; src: url('../assets/fonts/PixelifySans.ttf') format('truetype'); font-weight: 400 700; font-display: block; }
+@font-face { font-family: 'VT323'; src: url('../assets/fonts/VT323-Regular.ttf') format('truetype'); font-display: block; }
+:root {
+  --blue: #42B0D5; --navy: #00243D; --navy2: #0B3A5B; --white: #FFFFFF; --ice: #D7F0F8;
+  --red: #C23B2E; --orange: #E0812B; --yellow: #D9B23A; --green: #3E8A55; --grey: #8C9AA4;
+  --px: 4px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: var(--navy); color: var(--white);
+  font-family: 'VT323', monospace; font-size: 22px; line-height: 1.15;
+  image-rendering: pixelated; -webkit-font-smoothing: none; font-smooth: never;
+  background-image: url('../assets/img/water.png'); background-size: 64px 64px;
+  background-blend-mode: multiply; background-color: #062f4d;
+  -webkit-tap-highlight-color: transparent;
+}
+img, canvas { image-rendering: pixelated; image-rendering: crisp-edges; }
+h1, h2, h3, .btn, .tag, .ps { font-family: 'Pixelify', monospace; font-weight: 700; letter-spacing: 0; }
+h1 { font-size: 26px; margin: 0; line-height: 1.4; }
+h2 { font-size: 22px; margin: 0 0 14px; color: var(--blue); line-height: 1.5; }
+h3 { font-size: 18px; margin: 0 0 8px; line-height: 1.5; }
+a { color: var(--blue); }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 12px; }
+
+/* nagłówek */
+header.top { background: var(--navy); border-bottom: var(--px) solid var(--blue); position: sticky; top: 0; z-index: 20; }
+header.top .bar { display: flex; align-items: center; gap: 10px; padding: 8px 12px; max-width: 980px; margin: 0 auto; }
+header.top .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--white); }
+header.top .logo img { width: 27px; height: 27px; background: var(--blue); padding: 0; }
+header.top .logo span { font-family: 'Pixelify'; font-weight:700; font-size: 17px; line-height: 1; }
+header.top .who { margin-left: auto; font-size: 20px; color: var(--ice); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 40vw; }
+nav.tabs { display: flex; gap: 0; max-width: 980px; margin: 0 auto; overflow-x: auto; scrollbar-width: none; }
+nav.tabs a { flex: 1 0 auto; text-align: center; padding: 10px 10px; font-family: 'Pixelify'; font-weight:700; font-size: 15px; color: var(--ice); text-decoration: none; border-top: 2px solid var(--navy2); }
+nav.tabs a.on { background: var(--blue); color: var(--navy); }
+.banner { width: 100%; height: 120px; background: url('../assets/img/port_banner.png') center bottom / auto 120px repeat-x, linear-gradient(#7dcbe6, #bfe6f3 70%); border-bottom: var(--px) solid var(--navy2); position: relative; }
+.banner .title { position: absolute; left: 12px; top: 10px; font-family: 'Pixelify'; font-weight:700; color: var(--navy); font-size: 24px; text-shadow: 2px 2px 0 var(--white); }
+
+/* panele */
+main { padding: 16px 0 40px; }
+.panel { background: var(--navy2); border: var(--px) solid var(--navy); box-shadow: 0 0 0 var(--px) var(--blue), 6px 6px 0 var(--px) rgba(0,0,0,.45); padding: 16px; margin: 18px 4px; position: relative; }
+.panel.light { background: var(--ice); color: var(--navy); }
+.panel.light h2 { color: var(--navy); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.muted { color: #9ec7d8; }
+.light .muted { color: #44667a; }
+.err { color: #ffb4a8; min-height: 1.2em; }
+.ok { color: #9be3b1; }
+
+/* przyciski */
+.btn { display: inline-block; border: 0; cursor: pointer; font-size: 17px; line-height: 1; padding: 11px 14px 10px; color: var(--navy); background: var(--blue); text-decoration: none;
+  box-shadow: inset -4px -4px 0 rgba(0,0,0,.25), inset 4px 4px 0 rgba(255,255,255,.35), 0 0 0 3px var(--navy); margin: 3px; touch-action: manipulation; }
+.btn:hover { filter: brightness(1.1); }
+.btn:active { box-shadow: inset 4px 4px 0 rgba(0,0,0,.25), 0 0 0 3px var(--navy); transform: translateY(2px); }
+.btn.white { background: var(--white); }
+.btn.navy { background: var(--navy); color: var(--white); box-shadow: inset -4px -4px 0 rgba(0,0,0,.4), inset 4px 4px 0 rgba(255,255,255,.15), 0 0 0 3px var(--blue); }
+.btn.big { font-size: 21px; padding: 18px 22px 16px; }
+.btn[disabled] { opacity: .5; cursor: default; }
+.tag { display: inline-block; font-size: 13px; padding: 5px 6px 4px; background: var(--yellow); color: var(--navy); }
+
+/* formularze */
+label { display: block; margin: 10px 0 4px; font-size: 20px; }
+input, select { font-family: 'VT323', monospace; font-size: 24px; width: 100%; max-width: 360px; padding: 6px 8px; background: var(--white); color: var(--navy); border: 0; box-shadow: inset 3px 3px 0 #9fb4c0, 0 0 0 3px var(--navy); border-radius: 0; }
+input:focus { outline: 3px solid var(--blue); outline-offset: 3px; }
+.switch { display: flex; gap: 10px; align-items: center; margin: 8px 0; cursor: pointer; font-size: 22px; }
+.switch input { width: 24px; height: 24px; accent-color: var(--blue); }
+.seg { display: inline-flex; box-shadow: 0 0 0 3px var(--navy); margin: 3px; }
+.seg button { font-family: 'Pixelify'; font-weight:700; font-size: 15px; padding: 9px 10px 8px; border: 0; background: var(--white); color: var(--navy); cursor: pointer; }
+.seg button.on { background: var(--blue); }
+
+/* karty gier */
+.games { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 18px; margin-top: 8px; }
+.card { background: var(--ice); color: var(--navy); box-shadow: 0 0 0 var(--px) var(--navy), 0 0 0 calc(var(--px)*2) var(--blue); display: flex; flex-direction: column; text-decoration: none; }
+.card canvas { width: 100%; aspect-ratio: 2/1; display: block; background: #7dcbe6; border-bottom: var(--px) solid var(--navy); }
+.card .c-body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card .c-body h3 { margin: 0; }
+.card .c-body p { margin: 0; font-size: 20px; flex: 1; }
+.card .c-body .best { font-size: 19px; color: #2b5f78; }
+
+/* tabela rankingu */
+table.rank { width: 100%; border-collapse: collapse; font-size: 22px; }
+table.rank th { font-family: 'Pixelify'; font-weight:700; font-size: 15px; text-align: left; padding: 8px 6px; background: var(--navy); color: var(--blue); }
+table.rank td { padding: 5px 6px; border-bottom: 2px dashed rgba(66,176,213,.25); }
+table.rank tr.me td { background: var(--blue); color: var(--navy); }
+table.rank td.n { text-align: right; font-variant-numeric: tabular-nums; }
+.medal { display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: -1px; box-shadow: inset -3px -3px 0 rgba(0,0,0,.3); }
+
+/* gra */
+.game-stage { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 6px; }
+.game-stage .gbar { display: flex; width: 100%; max-width: 520px; align-items: center; gap: 6px; }
+.game-stage .gbar h2 { margin: 0; flex: 1; font-size: 18px; }
+.canvas-box { position: relative; touch-action: none; user-select: none; -webkit-user-select: none; box-shadow: 0 0 0 var(--px) var(--navy), 0 0 0 calc(var(--px)*2) var(--blue); background: #000; }
+.canvas-box canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: rgba(0,36,61,.86); text-align: center; padding: 16px; }
+.overlay .big { font-family: 'PS2P'; font-size: 22px; color: var(--blue); line-height: 1.4; }
+.overlay p { margin: 0; max-width: 300px; }
+body.playing header.top nav.tabs, body.playing footer, body.playing .banner, body.playing .evbar { display: none; }
+body.playing main { padding: 4px 0; }
+
+footer { font-size: 18px; color: #8db7c9; text-align: center; padding: 18px 12px 30px; }
+.evbar { background: var(--yellow); color: var(--navy); text-align: center; padding: 6px 8px 4px; font-size: 20px; }
+
+/* --- filtr retro (CRT) --- */
+#crt { position: fixed; inset: 0; pointer-events: none; z-index: 1000; display: none;
+  background:
+    repeating-linear-gradient(to bottom, rgba(0,0,0,0) 0 2px, rgba(0,0,0,.16) 2px 3px),
+    url('../assets/img/dither.png') 0 0 / 4px 4px repeat,
+    radial-gradient(ellipse at center, rgba(0,0,0,0) 62%, rgba(0,10,20,.42) 100%); }
+body.crt #crt { display: block; }
+body.crt .canvas-box canvas { filter: contrast(1.08) saturate(1.12); }
+body.crt h1, body.crt .overlay .big { text-shadow: 1px 0 rgba(255,60,60,.5), -1px 0 rgba(60,200,255,.5); }
+
+@media (min-width: 720px) {
+  h1 { font-size: 30px; } h2 { font-size: 26px; }
+  .banner { height: 168px; background-size: auto 168px, auto; }
+  .banner .title { font-size: 34px; top: 18px; left: 24px; }
+  nav.tabs a { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
